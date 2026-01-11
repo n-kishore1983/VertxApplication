@@ -27,12 +27,12 @@ public class CustomersVerticle extends AbstractVerticle {
                     JsonObject payload = new JsonObject().put("customerId", customerId);
                     Future<Message<JsonObject>> creditScoreFuture = vertx.eventBus().<JsonObject>request("credit.score", payload);
                     Future<Message<JsonObject>> contactFuture = vertx.eventBus().<JsonObject>request("customer.contacts", payload);
-
+                    Future<Message<JsonObject>> employmentFuture = vertx.eventBus().<JsonObject>request("employment.info", payload);
                     List<Future<Message<JsonObject>>> futures = new ArrayList<>();
                     futures.add(creditScoreFuture);
                     futures.add(contactFuture);
+                    futures.add(employmentFuture);
 
-                    JsonArray results = new JsonArray();
                     JsonObject mergedObject = new JsonObject();
                     futures.forEach(e -> e.onSuccess(reply -> mergedObject.mergeIn(reply.body())));
 
