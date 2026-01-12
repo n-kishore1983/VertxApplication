@@ -1,0 +1,4 @@
+{
+  "COSMOS_DB_NAME": "customer-database",
+  "COSMOS_DB_CONTAINER_NAME": "creditscoredb"
+}

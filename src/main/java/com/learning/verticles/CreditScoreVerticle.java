@@ -1,7 +1,6 @@
 package com.learning.verticles;
 
 import io.vertx.core.AbstractVerticle;
-import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
 
 public class CreditScoreVerticle extends AbstractVerticle {
