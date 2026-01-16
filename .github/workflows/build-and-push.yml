@@ -27,4 +27,4 @@ jobs:
         with:
           push: true
           tags: ${{ secrets.IMAGE_TAG }}
-          file: Dockerfile
+#          file: Dockerfile
