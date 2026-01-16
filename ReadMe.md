@@ -1,4 +1,5 @@
-Problem: Implement Customer Credit Score application using vert.x application with verticles in java, grrovy <br/>
+Task: Implement Customer Credit Score application using vert.x application with verticles in java, groovy <br/>
+![design.jpg](design.jpg)
 This application has the following verticles. <br/>
 Customers Verticle: To retrieve from 3 different verticles and consolidate the response <br/>
 CosmosDBVerticle: To retrieve credit score from CosmosDB <br/>
