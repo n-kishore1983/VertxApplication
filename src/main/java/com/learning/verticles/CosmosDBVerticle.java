@@ -36,8 +36,8 @@ public class CosmosDBVerticle extends AbstractVerticle {
                     .addStore(configStoreOptions);
             ConfigRetriever configRetriever = ConfigRetriever.create(vertx, configRetrieverOptions);
             configRetriever.getConfig().onSuccess(config -> {
-                String cosmosEndpoint = config.getString("COSMOS_END_POINT");
-                String cosmosKey = config.getString("COSMOS_KEY");
+                String cosmosEndpoint = System.getenv("COSMOS_END_POINT");
+                String cosmosKey = System.getenv("COSMOS_KEY");
                 String cosmosDatabaseName = config.getString("COSMOS_DB_NAME");
                 String cosmosContainerName = config.getString("COSMOS_DB_CONTAINER_NAME");
                         cosmosClient = new CosmosClientBuilder()
