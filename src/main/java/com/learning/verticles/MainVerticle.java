@@ -11,6 +11,6 @@ public class MainVerticle extends AbstractVerticle {
         vertx.deployVerticle(new CreditScoreVerticle());
         vertx.deployVerticle(new CustomerContactsVerticle());
         vertx.deployVerticle("groovy:groovy/EmploymentVerticle.groovy");
-//        vertx.deployVerticle(new CosmosDBVerticle());
+        vertx.deployVerticle(new CosmosDBVerticle());
     }
 }
