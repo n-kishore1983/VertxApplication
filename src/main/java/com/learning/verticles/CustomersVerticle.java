@@ -25,11 +25,11 @@ public class CustomersVerticle extends AbstractVerticle {
                     String customerId = ctx.pathParam("customerId");
                     System.out.println("Retrieving Details for customer " + customerId);
                     JsonObject payload = new JsonObject().put("customerId", customerId);
-                    Future<Message<JsonObject>> creditScoreFuture = vertx.eventBus().<JsonObject>request("credit.score.db", payload);
+//                    Future<Message<JsonObject>> creditScoreFuture = vertx.eventBus().<JsonObject>request("credit.score.db", payload);
                     Future<Message<JsonObject>> contactFuture = vertx.eventBus().<JsonObject>request("customer.contacts", payload);
                     Future<Message<JsonObject>> employmentFuture = vertx.eventBus().<JsonObject>request("employment.info", payload);
                     List<Future<Message<JsonObject>>> futures = new ArrayList<>();
-                    futures.add(creditScoreFuture);
+//                    futures.add(creditScoreFuture);
                     futures.add(contactFuture);
                     futures.add(employmentFuture);
 
