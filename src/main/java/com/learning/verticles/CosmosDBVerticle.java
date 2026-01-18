@@ -29,11 +29,14 @@ public class CosmosDBVerticle extends AbstractVerticle {
     public void start(Promise<Void> startPromise) throws Exception {
 
         try {
+            ConfigStoreOptions envStore = new ConfigStoreOptions()
+                    .setType("env");
             ConfigStoreOptions configStoreOptions = new ConfigStoreOptions()
                     .setType("file")
                     .setConfig(new JsonObject().put("path", "config/app-config.json"));
             ConfigRetrieverOptions configRetrieverOptions = new ConfigRetrieverOptions()
-                    .addStore(configStoreOptions);
+                    .addStore(configStoreOptions)
+                    .addStore(envStore);
             ConfigRetriever configRetriever = ConfigRetriever.create(vertx, configRetrieverOptions);
             configRetriever.getConfig().onSuccess(config -> {
                 String cosmosEndpoint = System.getenv("COSMOS_END_POINT");
