@@ -18,6 +18,7 @@ EXPOSE 8080
 
 #ENTRYPOINT ["sh","-c","echo Container started; sleep 300"]
 
-ENTRYPOINT ["java", "-jar", "/app/app.jar"]
+ENTRYPOINT ["java","-XX:+UseContainerSupport","-XX:MaxRAMPercentage=70.0","-jar","/app/app.jar"]
+
 
 
