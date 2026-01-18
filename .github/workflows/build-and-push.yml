@@ -19,7 +19,7 @@ jobs:
           COSMOS_END_POINT: ${{secrets.COSMOS_END_POINT}}
           COSMOS_KEY: ${{secrets.COSMOS_KEY}}
         run: |
-          ./mvnw clean install -Dmaven.test.skip=true
+          run: echo "Using COSMOS_END_POINT: $COSMOS_END_POINT"
       - name: Docker Login
         uses: azure/docker-login@v1
         with:
